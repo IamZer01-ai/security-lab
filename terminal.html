@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Terminal</title>
+<style>
+body{
+background:#000;
+color:#00ff00;
+font-family:Consolas,monospace;
+padding:20px;
+}
+
+#terminal{
+white-space:pre-wrap;
+}
+
+.cursor{
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+50%{opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div id="terminal"></div>
+
+<script>
+const text = `
+root@CyberSecurityA1:~#
+
+> analyst
+CyberSecurityA1
+
+> role
+Cybersecurity Student
+
+> status
+ONLINE
+
+> mission
+Learning Linux
+Learning Networking
+Building Security Lab
+
+> system
+READY
+`;
+
+let i = 0;
+const terminal = document.getElementById("terminal");
+
+function type(){
+if(i < text.length){
+terminal.innerHTML += text.charAt(i);
+i++;
+setTimeout(type,30);
+}
+}
+
+type();
+</script>
+
+</body>
+</html>
