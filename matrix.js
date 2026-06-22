@@ -1,1 +1,48 @@
-const c=document.getElementById('matrix');if(c){const x=c.getContext('2d');function r(){c.width=innerWidth;c.height=innerHeight}r();onresize=r;const d=Array(Math.floor(innerWidth/20)).fill(1);setInterval(()=>{x.fillStyle='rgba(0,0,0,.08)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0f0';d.forEach((y,i)=>{x.fillText('01'[Math.floor(Math.random()*2)],i*20,y*20);d[i]=(y*20>c.height)?0:y+1})},50)}
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
+
+const chars = letters.split("");
+
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+
+for(let i=0;i<columns;i++){
+drops[i]=1;
+}
+
+function draw(){
+
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00ff88";
+ctx.font=fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text=
+chars[Math.floor(Math.random()*chars.length)];
+
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(
+drops[i]*fontSize > canvas.height &&
+Math.random() > 0.975
+){
+drops[i]=0;
+}
+
+drops[i]++;
+}
+
+}
+
+setInterval(draw,35);
