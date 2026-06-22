@@ -1,1 +1,1 @@
-const c=document.getElementById('matrix');if(c){const x=c.getContext('2d');function r(){c.width=innerWidth;c.height=innerHeight}r();onresize=r;const d=Array(Math.floor(innerWidth/20)).fill(1);setInterval(()=>{x.fillStyle='rgba(0,0,0,.08)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0f0';d.forEach((y,i)=>{x.fillText('01'[Math.floor(Math.random()*2)],i*20,y*20);d[i]=(y*20>c.height)?0:y+1})},50)}
+console.log('matrix loaded');
