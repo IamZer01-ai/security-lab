@@ -1,0 +1,7 @@
+body{background:#000;color:#00ff66;font-family:Consolas,monospace;margin:0;padding:20px}
+#matrix{position:fixed;inset:0;z-index:-1}
+.login{text-align:center;margin-top:15%}
+.btn,.card{display:block;background:#111;border:1px solid #00ff66;color:#00ff66;text-decoration:none;padding:20px;border-radius:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card:hover,.btn:hover{box-shadow:0 0 20px #00ff66}
+.panel{background:#111;border:1px solid #00ff66;padding:20px}
