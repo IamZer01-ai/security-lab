@@ -1,28 +1,63 @@
-<section class="hero">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOC Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-<h1>Security Operations Center</h1>
+<body>
 
-<p>
-Real-Time Security Monitoring & Threat Detection
-</p>
+<canvas id="matrix"></canvas>
 
-<div class="stats">
+<nav>
+<div class="logo">SOC Dashboard</div>
 
-<div class="stat">
-<h2>24/7</h2>
-<p>Monitoring</p>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="reports.html">Reports</a></li>
+<li><a href="cases.html">Cases</a></li>
+<li><a href="intel.html">Intel</a></li>
+</ul>
+</nav>
+
+<section class="dashboard">
+
+<div class="card">
+<h3>Active Alerts</h3>
+<h1>07</h1>
 </div>
 
-<div class="stat">
-<h2>SIEM</h2>
-<p>Analysis</p>
+<div class="card">
+<h3>Critical Events</h3>
+<h1>02</h1>
 </div>
 
-<div class="stat">
-<h2>T1</h2>
-<p>SOC Analyst</p>
+<div class="card">
+<h3>Systems Monitored</h3>
+<h1>128</h1>
 </div>
 
+<div class="card">
+<h3>Network Health</h3>
+<h1>99%</h1>
 </div>
 
 </section>
+
+<section class="terminal-box">
+
+<h2>Security Operations Center</h2>
+
+<p>
+Monitoring events, analyzing logs, reviewing alerts,
+and maintaining visibility across network assets.
+</p>
+
+</section>
+
+<script src="matrix.js"></script>
+
+</body>
+</html>
